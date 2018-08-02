@@ -22,3 +22,19 @@ body {
 .btn-custom {
     font: bold;
 }
+
+/*
+  create template
+*/
+.create-title {
+    color: #e6ebdc;
+}
+
+.title-label {
+    color: #e6ebdc;
+    font-size: 20px;
+}
+
+.btn-create-submit {
+    float: right;    
+}
