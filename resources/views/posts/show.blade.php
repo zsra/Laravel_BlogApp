@@ -11,7 +11,7 @@
     <h2>{{$post->title}}</h2>
 
     <small>Writted on {{$post->created_at}}</small><hr>
-    <div>{{$post->body}}</div>
+    <div>{!!$post->body!!}</div>
 
 </div>
 

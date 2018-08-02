@@ -165,6 +165,10 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * Laravel ckeditor
+         */
+        Unisharp\Ckeditor\ServiceProvider::class,
 
     ],
 

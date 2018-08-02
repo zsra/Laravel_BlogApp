@@ -16,7 +16,7 @@
     <div class="form-group">
         
         {{Form::label('body', 'Post text', ['class' => 'title-label'])}}
-        {{Form::textarea('body', '', ['class' => 'form-control', 'placehorder' => 'Text'])}}
+        {{Form::textarea('body', '', [ 'id' => 'article-ckeditor', 'class' => 'form-control', 'placehorder' => 'Text'])}}
 
     </div>
 

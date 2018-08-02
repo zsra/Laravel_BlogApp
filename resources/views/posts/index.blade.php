@@ -9,7 +9,7 @@
             <div class="card p-3 post-body">
                 <h3><a href="{{route('posts.show', $post->id)}}">{{$post->title}}</a></h3>
                 <small>Writted on {{$post->created_at}}</small><hr>
-                <div>{{$post->body}}</div>
+                <div>{!!$post->body!!}</div>
             </div>
 
         @endforeach
