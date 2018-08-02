@@ -23,6 +23,11 @@ body {
     font: bold;
 }
 
+.delete-button-container {
+    margin-top: 20px;
+    float: right;
+}
+
 /*
   create template
 */
@@ -38,3 +43,4 @@ body {
 .btn-create-submit {
     float: right;    
 }
+
