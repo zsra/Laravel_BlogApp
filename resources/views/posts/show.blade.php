@@ -10,7 +10,7 @@
 
     <h2>{{$post->title}}</h2>
 
-    <small>Writted on {{$post->created_at}}</small>
+    <small>Writted on {{$post->created_at}} by {{$post->user->name}}</small>
     <hr>
     <div class="container">{!!$post->body!!}</div>
     <hr>
@@ -26,8 +26,7 @@
             {{Form::hidden('_method', 'DELETE')}}
             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!! Form::close() !!}
-    </div>
-    
+    </div>   
 </div>
 
 

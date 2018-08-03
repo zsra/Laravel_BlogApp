@@ -6,15 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+                <div class="card-body">               
+                    <a href="{{url('posts/create')}}" class="btn btn-primary">Create Post</a>
+                    <hr>
+                    <h4>Your Posts</h4>
+                    @if(count($posts) > 0)
+                        @include('inc.ListPostsInHomePage')
+                    @else
+                        <p>You have no Post</p>
+                   @endif
                 </div>
             </div>
         </div>
