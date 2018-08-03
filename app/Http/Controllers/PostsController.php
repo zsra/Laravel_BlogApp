@@ -7,6 +7,17 @@ use App\Post;
 
 class PostsController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -74,6 +85,11 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+
+        if(Auth()->user()->id !== $post->user_id) {
+
+            return view('posts')->with('error', 'You haven'.'t permission for this ');
+        }
 
         return view('posts.edit')->with('post', $post);
     }

@@ -14,20 +14,26 @@
     <hr>
     <div class="container">{!!$post->body!!}</div>
     <hr>
-    <a href="{{$post->id}}/edit">
-        Edit
-    </a>
-
+    @if(!Auth::guest())
+        @if(Auth::user()->id==$post->user_id)
+            <a href="{{$post->id}}/edit">Edit</a>
+        @endif
+    @endif
 </div>
 
-<div class="container">
-    <div class="delete-button-container">
-            {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
-            {{Form::hidden('_method', 'DELETE')}}
-            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-            {!! Form::close() !!}
-    </div>   
-</div>
+    @if(!Auth::guest())
+        @if(Auth::user()->id == $post->user_id)
+        <div class="container">
+                <div class="delete-button-container">
+                        {!! Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                        {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                        {!! Form::close() !!}
+                </div>   
+            </div>
+        @endif
+    @endif
+
 
 
 
